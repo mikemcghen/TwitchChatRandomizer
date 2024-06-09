@@ -46,12 +46,12 @@ const WheelComponent = () => {
     fetchMessages();
   }, []);
 
-  useEffect(() => {
+  const startSpin = () => {
     if (data.length > 0) {
       setPrizeNumber(Math.floor(Math.random() * data.length));
       setMustSpin(true);
     }
-  }, [data]);
+  };
 
   const handleSpinComplete = () => {
     setMustSpin(false);
@@ -73,8 +73,13 @@ const WheelComponent = () => {
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
         data={data}
+        spinDuration={.5}
+        disableInitialAnimation={true} 
         onStopSpinning={handleSpinComplete}
       />
+      <button onClick={startSpin} disabled={mustSpin || data.length === 0}>
+        Start Spin
+      </button>
     </div>
   );
 };

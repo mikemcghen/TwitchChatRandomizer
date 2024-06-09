@@ -1,3 +1,5 @@
+##Twitch Chat Randomizer
+
 import os
 import asyncio
 import websockets

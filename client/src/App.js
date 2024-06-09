@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <h1>Twitch Chat Randomizer</h1>
         <WheelComponent />
-      </header> 
+      </header>
     </div>
   );
 }
